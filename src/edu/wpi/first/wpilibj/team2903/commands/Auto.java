@@ -23,6 +23,7 @@ public class Auto extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         drive.drive(OI.rightStick.getX(), OI.leftStick.getY(), OI.leftStick.getX());
+        // do we really want to be using the joysticks during autonomous?
     }
 
     // Make this return true when this Command no longer needs to run execute()
