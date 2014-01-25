@@ -1,16 +1,17 @@
 
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.team2903.commands;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.team2903.OI;
+
 
 /**
  *
  * @author bradmiller
  */
-public class Teleop extends CommandBase {
+public class Auto extends CommandBase {
 
-    public Teleop() {
+    public Auto() {
         // Use requires() here to declare subsystem dependencies
         requires(drive);
     }

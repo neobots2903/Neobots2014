@@ -1,9 +1,9 @@
-package edu.wpi.first.wpilibj.templates.commands;
+package edu.wpi.first.wpilibj.team2903.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.templates.OI;
-import edu.wpi.first.wpilibj.templates.subsystems.Drive;
+import edu.wpi.first.wpilibj.team2903.OI;
+import edu.wpi.first.wpilibj.team2903.subsystems.Drive;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.

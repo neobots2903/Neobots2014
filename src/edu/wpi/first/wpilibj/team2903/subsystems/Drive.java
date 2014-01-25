@@ -1,9 +1,9 @@
 
-package edu.wpi.first.wpilibj.templates.subsystems;
+package edu.wpi.first.wpilibj.team2903.subsystems;
 
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.team2903.RobotMap;
 
 /**
  *

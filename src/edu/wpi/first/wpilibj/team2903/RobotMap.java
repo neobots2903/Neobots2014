@@ -1,4 +1,4 @@
-package edu.wpi.first.wpilibj.templates;
+package edu.wpi.first.wpilibj.team2903;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into

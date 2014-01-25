@@ -5,16 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package edu.wpi.first.wpilibj.templates;
+package edu.wpi.first.wpilibj.team2903;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.templates.commands.Auto;
-import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.commands.Teleop;
+import edu.wpi.first.wpilibj.team2903.commands.Auto;
+import edu.wpi.first.wpilibj.team2903.commands.CommandBase;
+import edu.wpi.first.wpilibj.team2903.commands.Teleop;
 
 /**
  * The VM is configured to automatically run this class, and to call the
