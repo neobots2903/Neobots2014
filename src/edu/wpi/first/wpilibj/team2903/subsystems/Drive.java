@@ -9,12 +9,14 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  *
  */
 public class Drive extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-    public Jaguar leftFrontMotor = new Jaguar(RobotMap.leftFrontMotor);
-    public Jaguar rightFrontMotor = new Jaguar(RobotMap.rightFrontMotor);
-    public Jaguar leftBackMotor = new Jaguar(RobotMap.leftBackMotor);
-    public Jaguar rightBackMotor = new Jaguar(RobotMap.rightBackMotor);
+    public Jaguar leftFrontMotor1 = new Jaguar(RobotMap.leftFrontMotor1);
+    public Jaguar leftFrontMotor2 = new Jaguar(RobotMap.leftFrontMotor2);
+    public Jaguar rightFrontMotor1 = new Jaguar(RobotMap.rightFrontMotor1);
+    public Jaguar rightFrontMotor2 = new Jaguar(RobotMap.rightFrontMotor2);
+    public Jaguar leftBackMotor1 = new Jaguar(RobotMap.leftBackMotor1);
+    public Jaguar leftBackMotor2 = new Jaguar(RobotMap.leftBackMotor2);
+    public Jaguar rightBackMotor1 = new Jaguar(RobotMap.rightBackMotor1);
+    public Jaguar rightBackMotor2 = new Jaguar(RobotMap.rightBackMotor2);
 
     
     public void initDefaultCommand() {
@@ -22,10 +24,16 @@ public class Drive extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     public void drive(double Ch1, double Ch3, double Ch4){
-        rightFrontMotor.set(Ch3 + Ch1 + Ch4);
-        leftBackMotor.set(Ch3 + Ch1 - Ch4);
-        rightFrontMotor.set(Ch3 - Ch1 - Ch4);
-        rightBackMotor.set(Ch3 - Ch1 + Ch4);
+        leftFrontMotor1.set(Ch3 + Ch1 + Ch4);//RIGHT FRONT MOTOR
+        leftFrontMotor2.set(Ch3 + Ch1 + Ch4);
+        
+        leftBackMotor1.set(Ch3 + Ch1 - Ch4);//LEFT BACK MOTOR
+        leftBackMotor2.set(Ch3 + Ch1 - Ch4);
+        
+        rightFrontMotor1.set(Ch3 - Ch1 - Ch4);//RIGHT FRONT MOTOR
+        rightFrontMotor2.set(Ch3 - Ch1 - Ch4);
+        
+        rightBackMotor1.set(Ch3 - Ch1 + Ch4);//RIGHT BACK MOTOR
+        rightBackMotor2.set(Ch3 - Ch1 + Ch4);
     }
 }
-
