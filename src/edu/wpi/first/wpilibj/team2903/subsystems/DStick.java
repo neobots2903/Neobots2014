@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  *
  */
 public class DStick extends Subsystem {
-    public Jaguar dstickHeight = new Jaguar(RobotMap.dstickHeight);
-    public Jaguar dstickSlide = new Jaguar(RobotMap.dstickSlide);
+    public Jaguar dstickVertical = new Jaguar(RobotMap.dstickVertical);
+    public Jaguar dstickHorizontal = new Jaguar(RobotMap.dstickHorizontal);
     public Jaguar dstickLeftTrack = new Jaguar(RobotMap.dstickLeftTrack);
     public Jaguar dstickRightTrack = new Jaguar(RobotMap.dstickRightTrack);
     
