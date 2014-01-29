@@ -1,8 +1,9 @@
 package edu.wpi.first.wpilibj.team2903.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.team2903.OI;
+import edu.wpi.first.wpilibj.team2903.subsystems.BallManager;
+import edu.wpi.first.wpilibj.team2903.subsystems.DStick;
 import edu.wpi.first.wpilibj.team2903.subsystems.Drive;
 
 /**
@@ -14,16 +15,13 @@ import edu.wpi.first.wpilibj.team2903.subsystems.Drive;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
-    // Create a single static instance of all of your subsystems
+    
+    //SUBSYSTEMS
     public static Drive drive = new Drive();
+    public static DStick DStick = new DStick();
+    public static BallManager Ball = new BallManager();
 
-    public static void init() {      
-        // This MUST be here. If the OI creates Commands (which it very likely
-        // will), constructing it during the construction of CommandBase (from
-        // which commands extend), subsystems are not guaranteed to be
-        // yet. Thus, their requires() statements may grab null pointers. Bad
-        // news. Don't move it.
-        
+    public static void init() {    
         //We need this
         oi = new OI();
 
