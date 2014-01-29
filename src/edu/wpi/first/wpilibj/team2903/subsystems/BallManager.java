@@ -16,8 +16,12 @@ public class BallManager  extends Subsystem{
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public void shoot(){ 
-        
+    public void Shoot(double zAxis){
+        //Set the speed equal to the Z axis Variable on the RightStick
+    }
+    
+    public void maxShoot(){ 
+        //Set the Shooting Motor to max in reverse
     }
 
 
