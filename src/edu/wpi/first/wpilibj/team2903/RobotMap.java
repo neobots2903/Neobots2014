@@ -24,8 +24,8 @@ public class RobotMap {
     
     //module 2
     public static final int Module2 = 2;
-    public static final int dstickHeight = 1;
-    public static final int dstickSlide = 2;
+    public static final int dstickVertical = 1;
+    public static final int dstickHorizontal = 2;
     public static final int dstickLeftTrack = 3;
     public static final int dstickRightTrack = 4;
     
