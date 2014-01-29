@@ -4,6 +4,7 @@ package edu.wpi.first.wpilibj.team2903;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -18,7 +19,7 @@ public class OI {
     public static Joystick rightStick = new Joystick(2);
     public static Joystick controlStick = new Joystick(3);
     // Button button = new JoystickButton(stick, buttonNumber);
-   // Button MaxShooter = new JoystickButton(rightStick,4);
+    public static Button MaxShooter = new JoystickButton(rightStick,4);
     
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
