@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  */
 public class BallManager  extends Subsystem{
  
-    public Jaguar launcherMotor = new Jaguar(RobotMap.launcherMotor);
+    public Jaguar launcherMotor = new Jaguar(RobotMap.launcher);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.

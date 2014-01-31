@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  *
  */
 public class DStick extends Subsystem {
-    public Jaguar dstickVertical = new Jaguar(RobotMap.dstickVertical);
-    public Jaguar dstickHorizontal = new Jaguar(RobotMap.dstickHorizontal);
-    public Jaguar dstickLeftTrack = new Jaguar(RobotMap.dstickLeftTrack);
-    public Jaguar dstickRightTrack = new Jaguar(RobotMap.dstickRightTrack);
+    public Jaguar dstickVertical = new Jaguar(RobotMap.dStickVert);
+    public Jaguar dstickHorizontal = new Jaguar(RobotMap.dStickHoriz);
+    public Jaguar dstickLeftTrack = new Jaguar(RobotMap.dStickLeftExt);
+    public Jaguar dstickRightTrack = new Jaguar(RobotMap.dStickRightExt);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
