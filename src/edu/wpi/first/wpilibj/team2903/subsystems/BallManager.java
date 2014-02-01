@@ -16,15 +16,11 @@ public class BallManager  extends Subsystem{
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public void Shoot(double zAxis){
-        //Set the speed equal to the Z axis Variable on the RightStick
+    public void Shoot(double zAxis) throws InterruptedException{
+        launcherMotor.setPosition(zAxis);
+        Thread.sleep(1000);
+        launcherMotor.setPosition(0);
     }
-    
-    public void maxShoot(){ 
-        //Set the Shooting Motor to max in reverse
-    }
-
-
 }
     
 
