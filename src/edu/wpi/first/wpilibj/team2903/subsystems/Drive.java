@@ -23,17 +23,26 @@ public class Drive extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    private void leftFrontMotors(double speed){
+        leftFrontMotor1.set(speed);//RIGHT FRONT MOTOR
+        leftFrontMotor2.set(speed);
+    }
+    private void leftBackMotors(double speed){
+        leftBackMotor1.set(speed);//LEFT BACK MOTOR
+        leftBackMotor2.set(speed);
+    }
+    private void rightFrontMotors(double speed){
+        rightFrontMotor1.set(speed);//RIGHT FRONT MOTOR
+        rightFrontMotor2.set(speed);
+    }
+    private void rightBackMotors(double speed){
+        rightBackMotor1.set(speed);//RIGHT BACK MOTOR
+        rightBackMotor2.set(speed);
+    }
     public void drive(double Ch1, double Ch3, double Ch4){
-        leftFrontMotor1.set(Ch3 + Ch1 + Ch4);//RIGHT FRONT MOTOR
-        leftFrontMotor2.set(Ch3 + Ch1 + Ch4);
-        
-        leftBackMotor1.set(Ch3 + Ch1 - Ch4);//LEFT BACK MOTOR
-        leftBackMotor2.set(Ch3 + Ch1 - Ch4);
-        
-        rightFrontMotor1.set(Ch3 - Ch1 - Ch4);//RIGHT FRONT MOTOR
-        rightFrontMotor2.set(Ch3 - Ch1 - Ch4);
-        
-        rightBackMotor1.set(Ch3 - Ch1 + Ch4);//RIGHT BACK MOTOR
-        rightBackMotor2.set(Ch3 - Ch1 + Ch4);
+        leftFrontMotors(Ch3 + Ch1 + Ch4);//RIGHT FRONT MOTOR
+        leftBackMotors(Ch3 + Ch1 - Ch4);//LEFT BACK MOTOR    
+        rightFrontMotors(Ch3 - Ch1 - Ch4);//RIGHT FRONT MOTOR
+        rightBackMotors(Ch3 - Ch1 + Ch4);//RIGHT BACK MOTOR
     }
 }
