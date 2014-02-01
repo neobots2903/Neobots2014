@@ -45,4 +45,15 @@ public class Drive extends Subsystem {
         rightFrontMotors(Ch3 - Ch1 - Ch4);//RIGHT FRONT MOTOR
         rightBackMotors(Ch3 - Ch1 + Ch4);//RIGHT BACK MOTOR
     }
+    public void forward(int time, double speed){
+        leftFrontMotors(speed);//RIGHT FRONT MOTOR
+        leftBackMotors(speed);//LEFT BACK MOTOR    
+        rightFrontMotors(speed);//RIGHT FRONT MOTOR
+        rightBackMotors(speed);//RIGHT BACK MOTOR
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+    }
 }
