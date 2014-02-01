@@ -23,19 +23,19 @@ public class Drive extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    private void leftFrontMotors(double speed){
+    public void leftFrontMotors(double speed){
         leftFrontMotor1.set(speed);//RIGHT FRONT MOTOR
         leftFrontMotor2.set(speed);
     }
-    private void leftBackMotors(double speed){
+    public void leftBackMotors(double speed){
         leftBackMotor1.set(speed);//LEFT BACK MOTOR
         leftBackMotor2.set(speed);
     }
-    private void rightFrontMotors(double speed){
+    public void rightFrontMotors(double speed){
         rightFrontMotor1.set(speed);//RIGHT FRONT MOTOR
         rightFrontMotor2.set(speed);
     }
-    private void rightBackMotors(double speed){
+    public void rightBackMotors(double speed){
         rightBackMotor1.set(speed);//RIGHT BACK MOTOR
         rightBackMotor2.set(speed);
     }
