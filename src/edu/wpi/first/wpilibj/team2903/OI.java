@@ -15,11 +15,17 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    public static Joystick leftStick = new Joystick(1);
-    public static Joystick rightStick = new Joystick(2);
-    public static Joystick controlStick = new Joystick(3);
+    public static Joystick leftDriveStick = new Joystick(1);
+    public static Joystick rightDriveStick = new Joystick(2);
+    public static Joystick defendiJoystick = new Joystick(3);
     // Button button = new JoystickButton(stick, buttonNumber);
-    public static Button MaxShooter = new JoystickButton(rightStick,4);
+    public static Button MaxShooter = new JoystickButton(rightDriveStick,2);
+    public static Button FireShooter = new JoystickButton(rightDriveStick,1);
+    public static Button OpenCatcher = new JoystickButton(rightDriveStick,3);
+    public static Button ToggleLeftDefendiTrack = new JoystickButton(defendiJoystick,4);
+    public static Button ToggleRightDefendiTrack = new JoystickButton(defendiJoystick,5);
+    public static Button ToggleLeftLowBlocker = new JoystickButton(defendiJoystick,6);
+    public static Button ToggleRightLowBlocker = new JoystickButton(defendiJoystick,11);
     
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if
