@@ -1,7 +1,7 @@
 
 package edu.wpi.first.wpilibj.team2903.subsystems;
 
-import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.RobotMap;
 
@@ -9,30 +9,44 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  *
  */
 public class DStick extends Subsystem {
-    public Jaguar dstickVertical = new Jaguar(RobotMap.dStickVert);
-    public Jaguar dstickHorizontal = new Jaguar(RobotMap.dStickHoriz);
-    public Jaguar dstickLeftTrack = new Jaguar(RobotMap.dStickLeftExt);
-    public Jaguar dstickRightTrack = new Jaguar(RobotMap.dStickRightExt);
+    public Servo dStickVert = new Servo(RobotMap.dStickVert);
+    public Servo dStickHoriz = new Servo(RobotMap.dStickHoriz);
+    public Servo dStickLeftExt = new Servo(RobotMap.dStickLeftExt);
+    public Servo dStickRightExt = new Servo(RobotMap.dStickRightExt);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
     
+    public boolean vertical(boolean deployed) {
+        if (deployed == true) {
+            dStickVert.setPosition(90);
+        } else {
+            dStickVert.setPosition(0);
+        }
+        return deployed;
+    }
+    
+    public boolean horizontal(double position) {
+        dStickHoriz.set(position);
+        return true;
+    }
+    
     public boolean leftTrack(boolean deployed) {
         if (deployed == true) {
-            dstickLeftTrack.setPosition(90);
+            dStickLeftExt.setPosition(90);
         } else {
-            dstickLeftTrack.setPosition(0);
+            dStickLeftExt.setPosition(0);
         }
         return deployed;
     }
     
     public boolean rightTrack(boolean deployed) {
         if (deployed == true) {
-            dstickRightTrack.setPosition(90);
+            dStickRightExt.setPosition(90);
         } else {
-            dstickRightTrack.setPosition(0);
+            dStickRightExt.setPosition(0);
         }
         return deployed;
     }
