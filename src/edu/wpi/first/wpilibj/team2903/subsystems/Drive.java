@@ -39,11 +39,20 @@ public class Drive extends Subsystem {
         rightBackMotor1.set(speed);//RIGHT BACK MOTOR
         rightBackMotor2.set(speed);
     }
-    public void drive(double Ch1, double Ch3, double Ch4){
-        leftFrontMotors(Ch3 + Ch1 + Ch4);//RIGHT FRONT MOTOR
-        leftBackMotors(Ch3 + Ch1 - Ch4);//LEFT BACK MOTOR    
-        rightFrontMotors(Ch3 - Ch1 - Ch4);//RIGHT FRONT MOTOR
-        rightBackMotors(Ch3 - Ch1 + Ch4);//RIGHT BACK MOTOR
+    /*
+        The drive team requested that the left stick controlled the speed of
+        the left motors and the Right stick controls the speed of the 
+        right motors.  
+    
+        This code below looks to use the left stick Y value to control
+        the speed of all the motors and the right stick Y value is not
+        taken into account.  
+    */
+    public void drive(double RightStick_X, double LeftStick_Y, double LeftStick_X){
+        leftFrontMotors(LeftStick_Y + RightStick_X + LeftStick_X);//RIGHT FRONT MOTOR
+        leftBackMotors(LeftStick_Y + RightStick_X - LeftStick_X);//LEFT BACK MOTOR    
+        rightFrontMotors(LeftStick_Y - RightStick_X - LeftStick_X);//RIGHT FRONT MOTOR
+        rightBackMotors(LeftStick_Y - RightStick_X + LeftStick_X);//RIGHT BACK MOTOR
     }
     public void forward(int time, double speed){
         leftFrontMotors(speed);//RIGHT FRONT MOTOR

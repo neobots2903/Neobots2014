@@ -1,6 +1,7 @@
 
 package edu.wpi.first.wpilibj.team2903.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.OI;
 
@@ -22,8 +23,6 @@ public class Teleop extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX());
-        
-        //driving 'round
         
     }
 
