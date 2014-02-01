@@ -13,6 +13,7 @@ public class DStick extends Subsystem {
     public Servo dStickHoriz = new Servo(RobotMap.dStickHoriz);
     public Servo dStickLeftExt = new Servo(RobotMap.dStickLeftExt);
     public Servo dStickRightExt = new Servo(RobotMap.dStickRightExt);
+    //TODO: low goal blockers
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
