@@ -10,13 +10,13 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  */
 public class Drive extends Subsystem {
     public Jaguar leftFrontMotor1 = new Jaguar(RobotMap.leftFrontMotor1);
-    public Jaguar leftFrontMotor2 = new Jaguar(RobotMap.leftFrontMotor2);
+    //public Jaguar leftFrontMotor2 = new Jaguar(RobotMap.leftFrontMotor2);
     public Jaguar rightFrontMotor1 = new Jaguar(RobotMap.rightFrontMotor1);
-    public Jaguar rightFrontMotor2 = new Jaguar(RobotMap.rightFrontMotor2);
+    //public Jaguar rightFrontMotor2 = new Jaguar(RobotMap.rightFrontMotor2);
     public Jaguar leftBackMotor1 = new Jaguar(RobotMap.leftBackMotor1);
-    public Jaguar leftBackMotor2 = new Jaguar(RobotMap.leftBackMotor2);
+    //public Jaguar leftBackMotor2 = new Jaguar(RobotMap.leftBackMotor2);
     public Jaguar rightBackMotor1 = new Jaguar(RobotMap.rightBackMotor1);
-    public Jaguar rightBackMotor2 = new Jaguar(RobotMap.rightBackMotor2);
+    //public Jaguar rightBackMotor2 = new Jaguar(RobotMap.rightBackMotor2);
 
     
     public void initDefaultCommand() {
@@ -25,19 +25,19 @@ public class Drive extends Subsystem {
     }
     public void leftFrontMotors(double speed){
         leftFrontMotor1.set(speed);//RIGHT FRONT MOTOR
-        leftFrontMotor2.set(speed);
+        //leftFrontMotor2.set(speed);
     }
     public void leftBackMotors(double speed){
         leftBackMotor1.set(speed);//LEFT BACK MOTOR
-        leftBackMotor2.set(speed);
+        //leftBackMotor2.set(speed);
     }
     public void rightFrontMotors(double speed){
         rightFrontMotor1.set(speed);//RIGHT FRONT MOTOR
-        rightFrontMotor2.set(speed);
+        //rightFrontMotor2.set(speed);
     }
     public void rightBackMotors(double speed){
         rightBackMotor1.set(speed);//RIGHT BACK MOTOR
-        rightBackMotor2.set(speed);
+        //rightBackMotor2.set(speed);
     }
     /*
         The drive team requested that the left stick controlled the speed of

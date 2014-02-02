@@ -12,14 +12,14 @@ public class RobotMap {
     
     //module 1
     public static final int Module1 = 1;
-    public static final int leftFrontMotor1 = 1;
-    public static final int leftFrontMotor2 = 2;
+    public static final int leftFrontMotor1 = 2;
+    //public static final int leftFrontMotor2 = 2;
     public static final int rightFrontMotor1 = 3;
-    public static final int rightFrontMotor2 = 4;
-    public static final int leftBackMotor1 = 5;
-    public static final int leftBackMotor2 = 6;
-    public static final int rightBackMotor1 = 7;
-    public static final int rightBackMotor2 = 8;
+    //public static final int rightFrontMotor2 = 4;
+    public static final int leftBackMotor1 = 1;
+    //public static final int leftBackMotor2 = 6;
+    public static final int rightBackMotor1 = 4;
+    //public static final int rightBackMotor2 = 8;
     
     //module 2
     public static final int Module2 = 2;
