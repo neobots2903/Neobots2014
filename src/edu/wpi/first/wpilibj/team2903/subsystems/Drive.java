@@ -48,11 +48,11 @@ public class Drive extends Subsystem {
         the speed of all the motors and the right stick Y value is not
         taken into account.  
     */
-    public void drive(double RightStick_X, double LeftStick_Y, double LeftStick_X){
-        leftFrontMotors(LeftStick_Y + RightStick_X + LeftStick_X);//RIGHT FRONT MOTOR
-        leftBackMotors(LeftStick_Y + RightStick_X - LeftStick_X);//LEFT BACK MOTOR    
-        rightFrontMotors(LeftStick_Y - RightStick_X - LeftStick_X);//RIGHT FRONT MOTOR
-        rightBackMotors(LeftStick_Y - RightStick_X + LeftStick_X);//RIGHT BACK MOTOR
+    public void drive(double RightStick_X, double Stick_Y, double LeftStick_X){
+        leftFrontMotors(Stick_Y + RightStick_X + LeftStick_X);//RIGHT FRONT MOTOR
+        leftBackMotors(Stick_Y + RightStick_X - LeftStick_X);//LEFT BACK MOTOR    
+        rightFrontMotors(Stick_Y - RightStick_X - LeftStick_X);//RIGHT FRONT MOTOR
+        rightBackMotors(Stick_Y - RightStick_X + LeftStick_X);//RIGHT BACK MOTOR
     }
     public void forward(int time, double speed){
         leftFrontMotors(speed);//RIGHT FRONT MOTOR
