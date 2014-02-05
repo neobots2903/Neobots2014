@@ -14,7 +14,7 @@ public class Defend extends Subsystem {
     public Servo dStickLeftExt = new Servo(RobotMap.dStickLeftExt);
     public Servo dStickRightExt = new Servo(RobotMap.dStickRightExt);
     public Servo lowGoalLeft = new Servo(RobotMap.lowGoalLeft);
-    public Servo lowGoalLRight = new Servo(RobotMap.lowGoalRight);
+    public Servo lowGoalRight = new Servo(RobotMap.lowGoalRight);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -55,18 +55,18 @@ public class Defend extends Subsystem {
     
     public boolean lowGoalLeft(boolean deployed) {
         if (deployed == true) {
-            dStickRightExt.setPosition(180);
+            lowGoalLeft.setPosition(180);
         } else {
-            dStickRightExt.setPosition(0);
+            lowGoalLeft.setPosition(0);
         }
         return deployed;
     }
     
     public boolean lowGoalRight(boolean deployed) {
         if (deployed == true) {
-            dStickRightExt.setPosition(180);
+            lowGoalRight.setPosition(180);
         } else {
-            dStickRightExt.setPosition(0);
+            lowGoalRight.setPosition(0);
         }
         return deployed;
     }
