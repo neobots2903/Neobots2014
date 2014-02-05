@@ -52,4 +52,22 @@ public class Defend extends Subsystem {
         }
         return deployed;
     }
+    
+    public boolean lowGoalLeft(boolean deployed) {
+        if (deployed == true) {
+            dStickRightExt.setPosition(180);
+        } else {
+            dStickRightExt.setPosition(0);
+        }
+        return deployed;
+    }
+    
+    public boolean lowGoalRight(boolean deployed) {
+        if (deployed == true) {
+            dStickRightExt.setPosition(180);
+        } else {
+            dStickRightExt.setPosition(0);
+        }
+        return deployed;
+    }
 }
