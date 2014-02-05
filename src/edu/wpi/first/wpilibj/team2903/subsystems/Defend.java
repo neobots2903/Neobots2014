@@ -4,6 +4,7 @@ package edu.wpi.first.wpilibj.team2903.subsystems;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.RobotMap;
+import edu.wpi.first.wpilibj.team2903.OI;
 
 /**
  *
@@ -15,11 +16,17 @@ public class Defend extends Subsystem {
     public Servo dStickRightExt = new Servo(RobotMap.dStickRightExt);
     public Servo lowGoalLeft = new Servo(RobotMap.lowGoalLeft);
     public Servo lowGoalRight = new Servo(RobotMap.lowGoalRight);
+    boolean leftTrackDeployed = false;
+    boolean rightTrackDeployed = false;
+    boolean leftLowGoalBlockerDeployed = false;
+    boolean rightLowGoalBlockerDeployed = false;
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
+
     
     public boolean vertical(boolean deployed) {
         if (deployed == true) {
@@ -34,12 +41,23 @@ public class Defend extends Subsystem {
         dStickHoriz.set(position);
         return true;
     }
-    
+        public boolean DeployLeftTrack()
+    {
+        if (leftTrackDeployed)
+            leftTrackDeployed = false;
+        else
+            leftTrackDeployed = true;
+        
+        return leftTrackDeployed;
+    }
+//public void deployLeftTrack  TODO: finish this line
     public boolean leftTrack(boolean deployed) {
         if (deployed == true) {
             dStickLeftExt.setPosition(90);
+            deployed=false;
         } else {
             dStickLeftExt.setPosition(0);
+            deployed=true;
         }
         return deployed;
     }
