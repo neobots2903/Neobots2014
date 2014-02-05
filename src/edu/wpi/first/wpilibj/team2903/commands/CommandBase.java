@@ -3,7 +3,7 @@ package edu.wpi.first.wpilibj.team2903.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.team2903.OI;
 import edu.wpi.first.wpilibj.team2903.subsystems.BallManager;
-import edu.wpi.first.wpilibj.team2903.subsystems.DStick;
+import edu.wpi.first.wpilibj.team2903.subsystems.Defend;
 import edu.wpi.first.wpilibj.team2903.subsystems.Drive;
 
 /**
@@ -18,7 +18,7 @@ public abstract class CommandBase extends Command {
     
     //SUBSYSTEMS
     public static Drive drive = new Drive();
-    public static DStick DStick = new DStick();
+    public static Defend DStick = new Defend();
     public static BallManager Ball = new BallManager();
 
     public static void init() {    
