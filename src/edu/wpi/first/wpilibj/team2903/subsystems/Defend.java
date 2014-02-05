@@ -8,12 +8,13 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
 /**
  *
  */
-public class DStick extends Subsystem {
+public class Defend extends Subsystem {
     public Servo dStickVert = new Servo(RobotMap.dStickVert);
     public Servo dStickHoriz = new Servo(RobotMap.dStickHoriz);
     public Servo dStickLeftExt = new Servo(RobotMap.dStickLeftExt);
     public Servo dStickRightExt = new Servo(RobotMap.dStickRightExt);
-    //TODO: low goal blockers
+    public Servo lowGoalLeft = new Servo(RobotMap.lowGoalLeft);
+    public Servo lowGoalLRight = new Servo(RobotMap.lowGoalRight);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
