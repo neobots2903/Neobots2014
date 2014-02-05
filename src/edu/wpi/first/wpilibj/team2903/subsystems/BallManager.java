@@ -1,6 +1,7 @@
 package edu.wpi.first.wpilibj.team2903.subsystems;
 //Z and locked button
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.RobotMap;
 /**
@@ -9,7 +10,7 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  */
 public class BallManager  extends Subsystem{
  
-    public Jaguar launcherMotor = new Jaguar(RobotMap.launcher);
+    public Victor launcherMotor = new Victor(RobotMap.launcher);
     //TODO: catcher motor
     
     public void initDefaultCommand() {
@@ -17,11 +18,21 @@ public class BallManager  extends Subsystem{
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public void Shoot(double zAxis) throws InterruptedException{
-        launcherMotor.setPosition(zAxis);
-        Thread.sleep(1000);
+  public interface SpeedController{
+  
+  void set(double speed);
+  
+ 
+  
+  }
+    
+    
+    
+    public void Shoot() throws InterruptedException{
+        launcherMotor.setPosition(0);
+        launcherMotor.setPosition(90);
+        Thread.sleep(2000);
         launcherMotor.setPosition(0);
     }
 }
-    
 
