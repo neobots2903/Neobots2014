@@ -32,11 +32,11 @@ public class Drive extends Subsystem {
         //leftBackMotor2.set(speed);
     }
     public void rightFrontMotors(double speed){
-        rightFrontMotor1.set(speed);//RIGHT FRONT MOTOR
+        rightFrontMotor1.set(-speed);//RIGHT FRONT MOTOR
         //rightFrontMotor2.set(speed);
     }
     public void rightBackMotors(double speed){
-        rightBackMotor1.set(speed);//RIGHT BACK MOTOR
+        rightBackMotor1.set(-speed);//RIGHT BACK MOTOR
         //rightBackMotor2.set(speed);
     }
     /*
