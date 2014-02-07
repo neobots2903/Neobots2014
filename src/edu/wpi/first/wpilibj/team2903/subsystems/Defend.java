@@ -27,7 +27,7 @@ public class Defend extends Subsystem {
     }
     
 
-    
+    //TODO: Fix the vertical & horizontal code
     public boolean vertical(boolean deployed) {
         if (deployed == true) {
             dStickVert.setPosition(90);

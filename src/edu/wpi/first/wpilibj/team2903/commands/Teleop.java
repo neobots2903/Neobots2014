@@ -14,6 +14,7 @@ public class Teleop extends CommandBase {
     public Teleop() {
         // Use requires() here to declare subsystem dependencies
         requires(drive);
+        requires(DStick);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +25,22 @@ public class Teleop extends CommandBase {
     protected void execute() {
         drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX());
         
-        
+        if(OI.ToggleLeftDefendiTrack.get())
+        {
+            DStick.leftTrack(true);
+        }
+        if(OI.ToggleRightDefendiTrack.get())
+        {
+            DStick.rightTrack(true);
+        }
+        if(OI.ToggleLeftLowBlocker.get())
+        {
+            DStick.lowGoalLeft(true);
+        }
+        if(OI.ToggleRightLowBlocker.get())
+        {
+            DStick.rightTrack(true);
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
