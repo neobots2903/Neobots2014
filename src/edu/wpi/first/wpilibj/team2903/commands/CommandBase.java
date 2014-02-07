@@ -18,7 +18,7 @@ public abstract class CommandBase extends Command {
     
     //SUBSYSTEMS
     public static Drive drive = new Drive();
-    public static Defend DStick = new Defend();
+    public static Defend Defend = new Defend();
     public static BallManager Ball = new BallManager();
 
     public static void init() {    
