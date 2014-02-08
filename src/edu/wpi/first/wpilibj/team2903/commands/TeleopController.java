@@ -7,9 +7,9 @@ import edu.wpi.first.wpilibj.team2903.OI;
  *
  * @author bradmiller
  */
-public class TeleopControler extends CommandBase {
+public class TeleopController extends CommandBase {
 
-    public TeleopControler() {
+    public TeleopController() {
         // Use requires() here to declare subsystem dependencies
         requires(drive);
     }
