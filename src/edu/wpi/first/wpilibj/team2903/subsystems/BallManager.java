@@ -32,13 +32,12 @@ public class BallManager extends Subsystem {
     }
 
     public void Shoot() throws InterruptedException {
-        // TODO: include capture in this code to open the capture arms
-        //  captured = false
-        //  capture();
+        captureMotor.setPosition(720); //TODO: Get the correct position
         launcherMotor.setPosition(0);
         launcherMotor.setPosition(90);
         Thread.sleep(2000);
         launcherMotor.setPosition(0);
+        captureMotor.setPosition(0);
     }
     
     public void ResetShooter()
