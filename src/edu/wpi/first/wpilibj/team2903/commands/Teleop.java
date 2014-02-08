@@ -25,7 +25,7 @@ public class Teleop extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX());
+        drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX(), OI.rightDriveStick.getZ());
         
         Defend.horizontal(OI.defendiJoystick.getX());
         Defend.vertical(OI.defendiJoystick.getY());
