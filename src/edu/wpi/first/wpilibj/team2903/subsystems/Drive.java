@@ -23,23 +23,23 @@ public class Drive extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public void leftFrontMotors(double speed) {
-        leftFrontMotor1.set(speed);//RIGHT FRONT MOTOR
+    public void leftFrontMotors(double speed,double multi) {
+        leftFrontMotor1.set(speed * multi);//RIGHT FRONT MOTOR
         //leftFrontMotor2.set(speed);
     }
 
-    public void leftBackMotors(double speed) {
-        leftBackMotor1.set(speed);//LEFT BACK MOTOR
+    public void leftBackMotors(double speed,double multi) {
+        leftBackMotor1.set(speed * multi);//LEFT BACK MOTOR
         //leftBackMotor2.set(speed);
     }
 
-    public void rightFrontMotors(double speed) {
-        rightFrontMotor1.set(-speed);//RIGHT FRONT MOTOR
+    public void rightFrontMotors(double speed,double multi) {
+        rightFrontMotor1.set(-speed * multi);//RIGHT FRONT MOTOR
         //rightFrontMotor2.set(speed);
     }
 
-    public void rightBackMotors(double speed) {
-        rightBackMotor1.set(-speed);//RIGHT BACK MOTOR
+    public void rightBackMotors(double speed,double multi) {
+        rightBackMotor1.set(-speed * multi);//RIGHT BACK MOTOR
         //rightBackMotor2.set(speed);
     }
     
@@ -52,18 +52,18 @@ public class Drive extends Subsystem {
      the speed of all the motors and the right stick Y value is not
      taken into account.  
      */
-    public void drive(double RightStick_X, double Stick_Y, double LeftStick_X) {
-        leftFrontMotors(Stick_Y + RightStick_X + LeftStick_X);//RIGHT FRONT MOTOR
-        leftBackMotors(Stick_Y + RightStick_X - LeftStick_X);//LEFT BACK MOTOR    
-        rightFrontMotors(Stick_Y - RightStick_X - LeftStick_X);//RIGHT FRONT MOTOR
-        rightBackMotors(Stick_Y - RightStick_X + LeftStick_X);//RIGHT BACK MOTOR
+    public void drive(double RightStick_X, double Stick_Y, double LeftStick_X, double multi) {
+        leftFrontMotors(Stick_Y + RightStick_X + LeftStick_X, multi);//RIGHT FRONT MOTOR
+        leftBackMotors(Stick_Y + RightStick_X - LeftStick_X, multi);//LEFT BACK MOTOR    
+        rightFrontMotors(Stick_Y - RightStick_X - LeftStick_X, multi);//RIGHT FRONT MOTOR
+        rightBackMotors(Stick_Y - RightStick_X + LeftStick_X, multi);//RIGHT BACK MOTOR
     }
 
     public void forward(int time, double speed) {
-        leftFrontMotors(speed);//RIGHT FRONT MOTOR
-        leftBackMotors(speed);//LEFT BACK MOTOR    
-        rightFrontMotors(speed);//RIGHT FRONT MOTOR
-        rightBackMotors(speed);//RIGHT BACK MOTOR
+        leftFrontMotors(speed, 1);//RIGHT FRONT MOTOR
+        leftBackMotors(speed, 1);//LEFT BACK MOTOR    
+        rightFrontMotors(speed, 1);//RIGHT FRONT MOTOR
+        rightBackMotors(speed, 1);//RIGHT BACK MOTOR
         try {
             Thread.sleep(time);
         } catch (InterruptedException ex) {
