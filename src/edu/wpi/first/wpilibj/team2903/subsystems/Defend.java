@@ -27,14 +27,9 @@ public class Defend extends Subsystem {
     }
     
 
-    //TODO: Fix the vertical & horizontal code
-    public boolean vertical(boolean deployed) {
-        if (deployed == true) {
-            dStickVert.setPosition(90);
-        } else {
-            dStickVert.setPosition(0);
-        }
-        return deployed;
+    public boolean vertical(double position) {
+        dStickVert.set(position);
+        return true;
     }
     
     public boolean horizontal(double position) {
