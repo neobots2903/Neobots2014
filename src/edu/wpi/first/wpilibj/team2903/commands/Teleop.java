@@ -4,6 +4,7 @@ package edu.wpi.first.wpilibj.team2903.commands;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.OI;
+import edu.wpi.first.wpilibj.team2903.subsystems.BallManager;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Teleop extends CommandBase {
         // Use requires() here to declare subsystem dependencies
         requires(drive);
         requires(Defend);
+        requires(Ball);
     }
 
     // Called just before this Command runs the first time
@@ -43,6 +45,21 @@ public class Teleop extends CommandBase {
         if(OI.ToggleRightLowBlocker.get())
         {
             Defend.rightTrack(true);
+        }
+        
+        if(OI.FireShooter.get())
+        {
+            try {
+                Ball.Shoot();
+            } catch (InterruptedException ex) {
+                System.out.println(ex);
+                Ball.ResetShooter();
+            }
+        }
+        
+        if(OI.OpenCatcher.get())
+        {
+            Ball.capture();
         }
     }
 

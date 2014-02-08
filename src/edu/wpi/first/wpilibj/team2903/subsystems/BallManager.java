@@ -40,4 +40,9 @@ public class BallManager extends Subsystem {
         Thread.sleep(2000);
         launcherMotor.setPosition(0);
     }
+    
+    public void ResetShooter()
+    {
+        launcherMotor.setPosition(0);
+    }
 }
