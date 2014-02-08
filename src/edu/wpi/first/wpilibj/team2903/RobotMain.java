@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.team2903.commands.Auto;
 import edu.wpi.first.wpilibj.team2903.commands.CommandBase;
 import edu.wpi.first.wpilibj.team2903.commands.Teleop;
+import edu.wpi.first.wpilibj.team2903.commands.TeleopController;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,6 +28,7 @@ public class RobotMain extends IterativeRobot {
 
     Command autonomousCommand;
     Command teleopCommand;
+    Command teleopControllerCommand;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -36,6 +38,7 @@ public class RobotMain extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new Auto();
         teleopCommand = new Teleop();
+        teleopControllerCommand = new TeleopController();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -60,6 +63,7 @@ public class RobotMain extends IterativeRobot {
         // this line or comment it out.
         autonomousCommand.cancel();
         teleopCommand.start();
+        teleopControllerCommand.start();
     }
 
     /**
