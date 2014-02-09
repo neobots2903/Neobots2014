@@ -70,4 +70,11 @@ public class Drive extends Subsystem {
             ex.printStackTrace();
         }
     }
+    
+    public void rightStrafe(boolean strafe, double multi){
+        drive(0, 1, 0, multi);
+    }
+    public void leftStrafe(boolean strafe, double multi){
+        drive(0, -1, 0, multi);
+    }
 }
