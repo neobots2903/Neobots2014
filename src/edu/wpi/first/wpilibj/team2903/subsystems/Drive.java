@@ -72,9 +72,13 @@ public class Drive extends Subsystem {
     }
     
     public void rightStrafe(boolean strafe, double multi){
-        drive(0, 1, 0, multi);
+        if(strafe){
+        drive(0, 0, -1, multi);
+        }
     }
     public void leftStrafe(boolean strafe, double multi){
-        drive(0, -1, 0, multi);
+        if(strafe){
+        drive(0, 0, 1, multi);
+        }
     }
 }
