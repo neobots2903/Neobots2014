@@ -14,34 +14,37 @@ public class BallManager extends Subsystem {
     public Victor launcherMotor = new Victor(RobotMap.launcher);
     public Victor captureMotor = new Victor(RobotMap.catcher);
     private boolean captured = false;
-    
+
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    
-    public boolean capture(){
-        if(captured){
+
+    public boolean capture() {
+        if (captured) {
             captureMotor.setPosition(720);//TODO: Get correct position
             captured = false;
-        }else{
+        } else {
             captureMotor.setPosition(0);
             captured = true;
         }
         return captured;
     }
 
-    public void Shoot() throws InterruptedException {
+    public void Shoot() {
         captureMotor.setPosition(720); //TODO: Get the correct position
         launcherMotor.setPosition(0);
         launcherMotor.setPosition(90);
-        Thread.sleep(2000);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            System.out.println(ex);
+        }
         launcherMotor.setPosition(0);
         captureMotor.setPosition(0);
     }
-    
-    public void ResetShooter()
-    {
+
+    public void ResetShooter() {
         launcherMotor.setPosition(0);
     }
 }

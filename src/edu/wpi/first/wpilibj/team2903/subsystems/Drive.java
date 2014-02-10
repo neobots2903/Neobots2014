@@ -23,26 +23,26 @@ public class Drive extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public void leftFrontMotors(double speed,double multi) {
+    public void leftFrontMotors(double speed, double multi) {
         leftFrontMotor1.set(speed * multi);//RIGHT FRONT MOTOR
         //leftFrontMotor2.set(speed);
     }
 
-    public void leftBackMotors(double speed,double multi) {
+    public void leftBackMotors(double speed, double multi) {
         leftBackMotor1.set(speed * multi);//LEFT BACK MOTOR
         //leftBackMotor2.set(speed);
     }
 
-    public void rightFrontMotors(double speed,double multi) {
+    public void rightFrontMotors(double speed, double multi) {
         rightFrontMotor1.set(-speed * multi);//RIGHT FRONT MOTOR
         //rightFrontMotor2.set(speed);
     }
 
-    public void rightBackMotors(double speed,double multi) {
+    public void rightBackMotors(double speed, double multi) {
         rightBackMotor1.set(-speed * multi);//RIGHT BACK MOTOR
         //rightBackMotor2.set(speed);
     }
-    
+
     /*
      The drive team requested that the left stick controlled the speed of
      the left motors and the Right stick controls the speed of the 
@@ -67,18 +67,19 @@ public class Drive extends Subsystem {
         try {
             Thread.sleep(time);
         } catch (InterruptedException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
         }
     }
-    
-    public void rightStrafe(boolean strafe, double multi){
-        if(strafe){
-        drive(0, 0, -1, multi);
+
+    public void rightStrafe(boolean strafe, double multi) {
+        if (strafe) {
+            drive(0, 0, -1, multi);
         }
     }
-    public void leftStrafe(boolean strafe, double multi){
-        if(strafe){
-        drive(0, 0, 1, multi);
+
+    public void leftStrafe(boolean strafe, double multi) {
+        if (strafe) {
+            drive(0, 0, 1, multi);
         }
     }
 }

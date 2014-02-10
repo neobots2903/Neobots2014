@@ -28,7 +28,7 @@ public class TeleopController extends CommandBase {
     protected void execute() {
         if (!stop) {
 
-            drive.drive(-OI.gameController.getRawAxis(3), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) *1.2, multi);
+            drive.drive(-OI.gameController.getRawAxis(3), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
 
             drive.leftStrafe(OI.gameController.getRawButton(5), multi);
             drive.rightStrafe(OI.gameController.getRawButton(6), multi);

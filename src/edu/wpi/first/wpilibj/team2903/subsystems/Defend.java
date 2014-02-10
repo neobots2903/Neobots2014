@@ -35,17 +35,6 @@ public class Defend extends Subsystem {
         return true;
     }
 
-    public boolean DeployLeftTrack() {
-        if (leftTrackDeployed) {
-            leftTrackDeployed = false;
-        } else {
-            leftTrackDeployed = true;
-        }
-
-        return leftTrackDeployed;
-    }
-//public void deployLeftTrack  TODO: finish this line
-
     public boolean leftTrack(boolean deployed) {
         if (deployed == true) {
             dStickLeftExt.setPosition(90);

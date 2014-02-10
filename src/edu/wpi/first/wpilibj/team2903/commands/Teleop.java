@@ -1,10 +1,6 @@
-
 package edu.wpi.first.wpilibj.team2903.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.OI;
-import edu.wpi.first.wpilibj.team2903.subsystems.BallManager;
 
 /**
  *
@@ -26,39 +22,28 @@ public class Teleop extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX(), OI.rightDriveStick.getZ());
-        
+
         Defend.horizontal(OI.defendiJoystick.getX());
         Defend.vertical(OI.defendiJoystick.getY());
-        
-        if(OI.ToggleLeftDefendiTrack.get())
-        {
+
+        if (OI.ToggleLeftDefendiTrack.get()) {
             Defend.leftTrack(true);
         }
-        if(OI.ToggleRightDefendiTrack.get())
-        {
+        if (OI.ToggleRightDefendiTrack.get()) {
             Defend.rightTrack(true);
         }
-        if(OI.ToggleLeftLowBlocker.get())
-        {
+        if (OI.ToggleLeftLowBlocker.get()) {
             Defend.lowGoalLeft(true);
         }
-        if(OI.ToggleRightLowBlocker.get())
-        {
+        if (OI.ToggleRightLowBlocker.get()) {
             Defend.rightTrack(true);
         }
-        
-        if(OI.FireShooter.get())
-        {
-            try {
-                Ball.Shoot();
-            } catch (InterruptedException ex) {
-                System.out.println(ex);
-                Ball.ResetShooter();
-            }
+
+        if (OI.FireShooter.get()) {
+            Ball.Shoot();
         }
-        
-        if(OI.OpenCatcher.get())
-        {
+
+        if (OI.OpenCatcher.get()) {
             Ball.capture();
         }
     }
