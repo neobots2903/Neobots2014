@@ -44,7 +44,7 @@ public class Teleop extends CommandBase {
         }
 
         if (OI.OpenCatcher.get()) {
-            Ball.capture();
+            Ball.hold(false);
         }
     }
 
