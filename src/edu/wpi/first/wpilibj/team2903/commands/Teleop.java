@@ -26,19 +26,10 @@ public class Teleop extends CommandBase {
         Defend.horizontal(OI.defendiJoystick.getX());
         Defend.vertical(OI.defendiJoystick.getY());
 
-        if (OI.ToggleLeftDefendiTrack.get()) {
-            Defend.leftTrack(true);
-        }
-        if (OI.ToggleRightDefendiTrack.get()) {
-            Defend.rightTrack(true);
-        }
         if (OI.ToggleLeftLowBlocker.get()) {
             Defend.lowGoalLeft(true);
         }
-        if (OI.ToggleRightLowBlocker.get()) {
-            Defend.rightTrack(true);
-        }
-
+        
         if (OI.FireShooter.get()) {
             Ball.Shoot();
         }

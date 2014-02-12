@@ -14,15 +14,9 @@ public class RobotMap {
     public static final int rightFrontMotor1 = 3;
     public static final int leftBackMotor1 = 1;
     public static final int rightBackMotor1 = 4;
-
-    //module 2
-    public static final int Module2 = 2;
-    public static final int dStickVert = 1;
-    public static final int dStickHoriz = 2;
-    public static final int dStickLeftExt = 3;
-    public static final int dStickRightExt = 4;
-    public static final int launcher = 5;
-    public static final int catcher = 6;
-    public static final int lowGoalLeft = 7;
-    public static final int lowGoalRight = 8;
+    public static final int dStickVert = 5;
+    public static final int dStickHoriz = 6;
+    public static final int launcher = 7;
+    public static final int catcher = 8;
+    public static final int lowGoal = 9;
 }
