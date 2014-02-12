@@ -46,6 +46,12 @@ public class TeleopController extends CommandBase {
                 multi = 1;
                 //System.out.println(multi);
             }
+            
+            if (OI.gameController.getRawButton(8)){
+            
+                Ball.Shoot();
+                
+            }
         }
         if (OI.gameController.getRawButton(9) && stop) {
             stop = false;
