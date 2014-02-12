@@ -1,6 +1,7 @@
 package edu.wpi.first.wpilibj.team2903.subsystems;
 //Z and locked button
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.RobotMap;
@@ -31,18 +32,16 @@ public class BallManager extends Subsystem {
     }
 
     public void Shoot() {
-        hold(false);
-        launcherMotor.setPosition(0);
+//        hold(false);
         launcherMotor.set(1);
-        launcherMotor.setPosition(90);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ex) {
-            System.out.println(ex);
-        }
-        launcherMotor.set(0.25);
-        launcherMotor.setPosition(0);
-        hold(false);
+        Timer.delay(0.250);
+//        launcherMotor.setPosition(intiPos+90);
+//        Timer.delay(2000);
+//        launcherMotor.set(0.25);
+//        launcherMotor.setPosition(0);
+//        hold(false);
+        launcherMotor.set(0);
+        Timer.delay(5);
     }
 
     public void ResetShooter() {
