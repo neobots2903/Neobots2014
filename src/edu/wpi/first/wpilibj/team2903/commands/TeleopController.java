@@ -11,6 +11,7 @@ public class TeleopController extends CommandBase {
     boolean stop;
     double multi;
     boolean cmode;
+    boolean forward;
 
     public TeleopController() {
         // Use requires() here to declare subsystem dependencies
@@ -22,13 +23,18 @@ public class TeleopController extends CommandBase {
         stop = false;
         multi = 0.25;
         cmode = true;
+        forward = true;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (!stop) {
 
-            drive.drive(-OI.gameController.getRawAxis(3), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
+            if (forward) {
+                drive.drive(-OI.gameController.getRawAxis(3), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
+            } else {
+                drive.drive(OI.gameController.getRawAxis(3), -OI.gameController.getRawAxis(2), OI.gameController.getRawAxis(1) * 1.2, multi);
+            }
 
             drive.leftStrafe(OI.gameController.getRawButton(5), multi);
             drive.rightStrafe(OI.gameController.getRawButton(6), multi);
@@ -45,6 +51,12 @@ public class TeleopController extends CommandBase {
             } else if (OI.gameController.getRawButton(1)) {
                 multi = 1;
                 //System.out.println(multi);
+            } else if (OI.gameController.getRawButton(0)) {
+                if (forward){
+                    forward = false;
+                } else {
+                    forward = true;
+                }
             }
             
             if (OI.gameController.getRawButton(8)){
