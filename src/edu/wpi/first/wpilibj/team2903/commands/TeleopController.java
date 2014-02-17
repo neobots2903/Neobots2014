@@ -51,12 +51,8 @@ public class TeleopController extends CommandBase {
             } else if (OI.gameController.getRawButton(1)) {
                 multi = 1;
                 //System.out.println(multi);
-            } else if (OI.gameController.getRawButton(0)) {
-                if (forward){
-                    forward = false;
-                } else {
-                    forward = true;
-                }
+            } else if (OI.gameController.getRawButton(0)) {//TODO: Find button for this
+                forward = !forward;
             }
             
             if (OI.gameController.getRawButton(8)){
@@ -64,6 +60,13 @@ public class TeleopController extends CommandBase {
                 Ball.Shoot();
                 
             }
+            
+            //2nd controller for defence
+            Defend.horizontal(OI.gameController2.getRawAxis(1));
+            Defend.vertical(OI.gameController2.getRawAxis(2));
+            Ball.hold(OI.gameController2.getRawAxis(3));
+            
+            
         }
         if (OI.gameController.getRawButton(9) && stop) {
             stop = false;

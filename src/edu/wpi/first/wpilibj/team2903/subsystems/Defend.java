@@ -22,14 +22,12 @@ public class Defend extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
 
-    public boolean vertical(double position) {
+    public void vertical(double position) {
         dStickVert.set(position);
-        return true;
     }
 
-    public boolean horizontal(double position) {
+    public void horizontal(double position) {
         dStickHoriz.set(position);
-        return true;
     }
 
     public boolean lowGoalLeft(boolean deployed) {

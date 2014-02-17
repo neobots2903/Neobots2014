@@ -18,6 +18,7 @@ public class OI {
     public static Joystick rightDriveStick = new Joystick(2);
     public static Joystick defendiJoystick = new Joystick(3);
     public static Joystick gameController = new Joystick(4);
+    public static Joystick gameController2 = new Joystick(5);
     // Button button = new JoystickButton(stick, buttonNumber);
     public static Button MaxShooter = new JoystickButton(rightDriveStick,2);
     public static Button FireShooter = new JoystickButton(rightDriveStick,1);
