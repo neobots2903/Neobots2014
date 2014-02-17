@@ -20,7 +20,7 @@ public class Teleop extends CommandBase {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
+    protected void execute() {//TODO: FIX 
         drive.drive(OI.rightDriveStick.getX(), OI.leftDriveStick.getY(), OI.leftDriveStick.getX(), OI.rightDriveStick.getZ());
 
         Defend.horizontal(OI.defendiJoystick.getX());
@@ -35,7 +35,7 @@ public class Teleop extends CommandBase {
         }
 
         if (OI.OpenCatcher.get()) {
-            Ball.hold(false);
+            Ball.hold(0.5);
         }
     }
 

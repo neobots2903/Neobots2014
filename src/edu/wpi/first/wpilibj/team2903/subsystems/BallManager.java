@@ -2,6 +2,7 @@ package edu.wpi.first.wpilibj.team2903.subsystems;
 //Z and locked button
 
 import edu.wpi.first.wpilibj.CounterBase;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Victor;
@@ -17,20 +18,18 @@ public class BallManager extends Subsystem {
     public Victor launcherMotor = new Victor(RobotMap.launcher);
     public Victor captureMotor = new Victor(RobotMap.catcher);
     public Encoder launcherEncoder = new Encoder(1, 2, true, CounterBase.EncodingType.k4X);
+    public DigitalInput catureLimit = new DigitalInput(10);
 
     public void initDefaultCommand() {
         launcherEncoder.setDistancePerPulse(0.25);
     }
 
-    public boolean hold(boolean captured) {
-        if (captured) {
-            captureMotor.setPosition(720);//TODO: Get correct position
-            captured = false;
-        } else {
-            captureMotor.setPosition(0);
-            captured = true;
+    public void hold(double direction) {
+        if(catureLimit.get() && direction < 0){
+            captureMotor.set(0);
+        }else{
+            captureMotor.set(direction);
         }
-        return captured;
     }
 
     public void Shoot() {
