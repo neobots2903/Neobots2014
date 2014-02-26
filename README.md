@@ -1,7 +1,7 @@
 <a href="http://neobots2903.org/" target="_blank">![alt text](http://i48.tinypic.com/jpkakz_th.png "NeoBots Logo")</a>
-# <a id="Top"></a>The FrizBot #
+# <a id="Top"></a>The 2014 Neobot robot #
 ***
-**NeoBots** (FRC Team 2903) 2013 Robot code.
+**NeoBots** (FRC Team 2903) 2014 Robot code.
 
 **Anchors**   
    * [Top](#Top)   
@@ -14,10 +14,13 @@
    * **Gavin Britton** 
    * **Connor Tilley**
    * **Andrew Bunham**
+   * **Martin Canivez**
+   * **Jordy Goodridge**
+   * **Arthur Cheung**
 
 ## **Links:**
 
-   * <a href="https://github.com/neobots2903/FrizBot/wiki" target="_blank">FrizBot Wiki</a>
+/*   * <a href="https://github.com/neobots2903/FrizBot/wiki" target="_blank">FrizBot Wiki</a> */
    * <a href="http://neobots2903.org/" target="_blank">NeoBots Home Page</a>
 
    
