@@ -20,7 +20,7 @@
 
 ## **Links:**
 
-/*   * <a href="https://github.com/neobots2903/FrizBot/wiki" target="_blank">FrizBot Wiki</a> */
+   * <a>FrizBot Wiki</a>
    * <a href="http://neobots2903.org/" target="_blank">NeoBots Home Page</a>
 
    
