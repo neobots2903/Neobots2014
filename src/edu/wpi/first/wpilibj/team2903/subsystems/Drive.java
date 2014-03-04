@@ -58,6 +58,12 @@ public class Drive extends Subsystem {
         rightFrontMotors(Stick_Y - RightStick_X - LeftStick_X, multi);//RIGHT FRONT MOTOR
         rightBackMotors(Stick_Y - RightStick_X + LeftStick_X, multi);//RIGHT BACK MOTOR
     }
+    public void tank(double right, double left){
+        leftBackMotors(left, 0.5);
+        leftFrontMotors(left, 0.5);
+        rightBackMotors(right, 0.5);
+        rightFrontMotors(right, 0.5);
+    }
 
     public void forward(int time, double speed) {
         leftFrontMotors(speed, 1);//RIGHT FRONT MOTOR

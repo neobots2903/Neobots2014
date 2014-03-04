@@ -2,6 +2,7 @@
 package edu.wpi.first.wpilibj.team2903;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.KinectStick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -19,6 +20,8 @@ public class OI {
     public static Joystick defendiJoystick = new Joystick(3);
     public static Joystick gameController = new Joystick(4);
     public static Joystick gameController2 = new Joystick(5);
+    public static KinectStick leftArm = new KinectStick(1);
+    public static KinectStick rightArm = new KinectStick(2);
     // Button button = new JoystickButton(stick, buttonNumber);
     public static Button MaxShooter = new JoystickButton(rightDriveStick,2);
     public static Button FireShooter = new JoystickButton(rightDriveStick,1);
