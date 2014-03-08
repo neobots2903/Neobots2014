@@ -24,42 +24,50 @@ public class BallManager extends Subsystem {
         launcherEncoder.setDistancePerPulse(0.25);
     }
 
-    public void hold(double direction) {
-        if(catureLimit.get() && direction < 0){
+    public void capture(boolean open, boolean close) {
+        if (open) {
+            captureMotor.set(0.5);
+        } else if(close){
+            captureMotor.set(-0.5);
+        } else{
             captureMotor.set(0);
-        }else{
-            captureMotor.set(direction);
         }
     }
 
+
     public void Shoot() {
-        launcherEncoder.reset();
-        launcherEncoder.start();
-        launcherMotor.set(1);
-        while(true){
-            int nope = 0;
-            if(launcherEncoder.getDistance() >= 90 || nope >= 20){
-                launcherMotor.set(0);
-                break;
-            }
-            if(launcherEncoder.getDistance() <= -20){
-                launcherMotor.set(0);
-                System.out.println("**** ENDODER SET IN INCORECT DIRECTION ****");
-                break;
-            }
-            Timer.delay(0.005);
-            if(launcherEncoder.getDistance() < 20){//saftey code if encoder doesn't work
-                nope++;
-            }
-            if(nope >= 20){
-                System.out.println("**** ENCODER FAILER ****");
-            }
-        }
-        
+        Thread driveT = new Thread(new Runnable() {
+            public void run() {
+
+                launcherEncoder.reset();
+                launcherEncoder.start();
+                launcherMotor.set(1);
+                while (true) {
+                    int nope = 0;
+                    if (launcherEncoder.getDistance() >= 90 || nope >= 20) {
+                        launcherMotor.set(0);
+                        break;
+                    }
+                    if (launcherEncoder.getDistance() <= -20) {
+                        launcherMotor.set(0);
+                        System.out.println("**** ENDODER SET IN INCORECT DIRECTION ****");
+                        break;
+                    }
+                    Timer.delay(0.005);
+                    if (launcherEncoder.getDistance() < 20) {//saftey code if encoder doesn't work
+                        nope++;
+                    }
+                    if (nope >= 20) {
+                        System.out.println("**** ENCODER FAILER ****");
+                    }
+                }
+
 //        launcherMotor.set(1);
 //        Timer.delay(0.250);
 //        launcherMotor.set(0);
 //        Timer.delay(5);
+            }
+        });
     }
 
     public void ResetShooter() {
