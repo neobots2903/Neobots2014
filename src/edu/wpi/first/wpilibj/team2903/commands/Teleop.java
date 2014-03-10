@@ -52,7 +52,7 @@ public class Teleop extends CommandBase {
             forward = !forward;
         }
 
-        if (OI.gameController.getRawButton(6)) {
+        if (OI.defendiJoystick.getRawButton(1)) {
             Ball.Shoot();
         }
 
