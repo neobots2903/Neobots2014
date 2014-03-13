@@ -20,7 +20,19 @@ public class Auto extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         //drive.forward(500, 0.75);//time and speed it will go forward
-        drive.tank(OI.rightArm.getY(), OI.leftArm.getY());
+        
+        if (OI.leftArm.getY() < 0.5 && OI.leftArm.getY() > -0.5) {
+            drive.tank(1, 1);  
+            Defend.horizontal(0.5);
+        } else if (OI.rightArm.getY() < 0.5 && OI.rightArm.getY() > -0.5){
+            drive.tank(-1, -1);           
+            Defend.horizontal(-0.5);
+        }else{
+            drive.tank(0, 0);           
+            Defend.horizontal(0);
+        }
+        //geoff's code VVV
+        //drive.tank(OI.rightArm.getY(), OI.leftArm.getY());
     }
 
     // Make this return true when this Command no longer needs to run execute()

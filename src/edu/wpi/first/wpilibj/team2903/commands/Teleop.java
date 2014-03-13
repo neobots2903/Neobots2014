@@ -1,5 +1,6 @@
 package edu.wpi.first.wpilibj.team2903.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.team2903.OI;
 
 /**
@@ -30,9 +31,9 @@ public class Teleop extends CommandBase {
     protected void execute() {
 
         if (forward) {
-            drive.drive(-OI.gameController.getRawAxis(4), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
+            drive.drive(-OI.gameController.getRawAxis(4), -OI.gameController.getRawAxis(2), OI.gameController.getRawAxis(1) * 1.2, multi);
         } else {
-            drive.drive(OI.gameController.getRawAxis(4), -OI.gameController.getRawAxis(2), OI.gameController.getRawAxis(1) * 1.2, multi);
+            drive.drive(OI.gameController.getRawAxis(4), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
         }
 
 //        drive.leftStrafe(OI.gameController.getRawButton(5), multi);
@@ -40,7 +41,7 @@ public class Teleop extends CommandBase {
 
         if (OI.gameController.getRawButton(1)) {
             multi = 0.25;
-        } else if (OI.gameController.getRawButton(4)) {
+        } else if (OI.gameController.getRawButton(3)) {
             multi = 0.5;
         } else if (OI.gameController.getRawButton(2)) {
             multi = 0.75;
@@ -53,7 +54,14 @@ public class Teleop extends CommandBase {
         }
 
         if (OI.defendiJoystick.getRawButton(1)) {
-            Ball.Shoot();
+//            Thread shoot = new Thread(new Runnable() {
+//                public void run() {
+                    Ball.Shoot();
+                    Timer.delay(3);
+//                }
+//            });
+//            shoot.start();
+//            Timer.delay(1);
         }
 
         //2nd controller for defence
