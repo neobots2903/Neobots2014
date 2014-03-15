@@ -17,12 +17,13 @@ public class Teleop extends CommandBase {
     public Teleop() {
         // Use requires() here to declare subsystem dependencies
         requires(drive);
+        requires(Defend);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
         stop = false;
-        multi = 0.25;
+        multi = 1;
         cmode = true;
         forward = true;
     }
@@ -35,6 +36,8 @@ public class Teleop extends CommandBase {
         } else {
             drive.drive(OI.gameController.getRawAxis(4), OI.gameController.getRawAxis(2), -OI.gameController.getRawAxis(1) * 1.2, multi);
         }
+     //   Defend.horizontal(OI.defendiJoystick.getX());
+      //  Defend.vertical(OI.defendiJoystick.getY());
 
 //        drive.leftStrafe(OI.gameController.getRawButton(5), multi);
 //        drive.rightStrafe(OI.gameController.getRawButton(6), multi);
@@ -56,8 +59,20 @@ public class Teleop extends CommandBase {
         if (OI.defendiJoystick.getRawButton(1)) {
 //            Thread shoot = new Thread(new Runnable() {
 //                public void run() {
+            drive.drive(0, 0, 0, 0);
                     Ball.Shoot();
-                    Timer.delay(3);
+                    Timer.delay(.01);
+//                }
+//            });
+//            shoot.start();
+//            Timer.delay(1);
+        }
+        if (OI.defendiJoystick.getRawButton(4)) {
+//            Thread shoot = new Thread(new Runnable() {
+//                public void run() {
+            drive.drive(0, 0, 0, 0);
+                    Ball.SoftShoot();
+                    Timer.delay(.01);
 //                }
 //            });
 //            shoot.start();
@@ -65,9 +80,34 @@ public class Teleop extends CommandBase {
         }
 
         //2nd controller for defence
-        Defend.horizontal(OI.defendiJoystick.getX());
-        Defend.vertical(OI.defendiJoystick.getY());
+        //Defend.horizontal(OI.defendiJoystick.getX());
+        if (OI.defendiJoystick.getRawButton(6))
+        {
+        Defend.vertical(-1);
+        }
+        else if (OI.defendiJoystick.getRawButton(7))
+        {
+        Defend.vertical(1);
+        }
+        else
+        {
+        Defend.vertical(0);
+        }
+        
+        if (OI.defendiJoystick.getRawButton(8))
+        {
+        Defend.horizontal(-1);
+        }
+        else if (OI.defendiJoystick.getRawButton(9))
+        {
+        Defend.horizontal(1);
+        }
+        else
+        {
+        Defend.horizontal(0);
+        }
         Ball.capture(OI.defendiJoystick.getRawButton(3), OI.defendiJoystick.getRawButton(2));
+        
 
 
 //        if (OI.gameController.getRawButton(9) && stop) {

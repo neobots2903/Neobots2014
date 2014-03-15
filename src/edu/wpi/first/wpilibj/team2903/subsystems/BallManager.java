@@ -25,11 +25,14 @@ public class BallManager extends Subsystem {
     }
 
     public void capture(boolean open, boolean close) {
-        if (open) {
-            captureMotor.set(1);
+        
+ 
+        if (open && captureMotor.get() != .75) {
+            captureMotor.set(.75);
+            
             //set to .5 normally
         } else if(close){
-            captureMotor.set(-1);
+            captureMotor.set(-.75);
         } else{
             captureMotor.set(0);
         }
@@ -44,17 +47,59 @@ public class BallManager extends Subsystem {
             launcherMotor.set(1);
             Timer.delay(0.250);
             launcherMotor.set(0);
-            Timer.delay(0.5);
+            Timer.delay(0.1);
             int distance = -launcherEncoder.get();
 
                 launcherEncoder.reset();
                 launcherEncoder.start();
-                launcherMotor.set(-0.1);
+                launcherMotor.set(-0.25);
                 while (true) {
                     int nope = 0;
                     if (launcherEncoder.get() >= distance || nope >= 20) {
                         launcherMotor.set(0);
-                        Timer.delay(1);
+                        Timer.delay(.4);
+                        
+                        break;
+                    }
+                    if (launcherEncoder.get() <= -20) {
+                        launcherMotor.set(0);
+                        System.out.println("**** ENDODER SET IN INCORECT DIRECTION ****");
+                        break;
+                    }
+                    Timer.delay(0.005);
+                    if (launcherEncoder.get() < 20) {//saftey code if encoder doesn't work
+                        nope++;
+                    }
+                    if (nope >= 20) {
+                        System.out.println("**** ENCODER FAILER ****");
+                    }
+                }
+
+
+//            }
+//        });
+    }
+    
+    
+    public void SoftShoot() {
+//        Thread driveT = new Thread(new Runnable() {
+//            public void run() {
+        launcherEncoder.reset();
+               launcherEncoder.start();
+            launcherMotor.set(.3);
+            Timer.delay(0.50);
+            launcherMotor.set(0);
+            Timer.delay(0.1);
+            int distance = -launcherEncoder.get();
+
+                launcherEncoder.reset();
+                launcherEncoder.start();
+                launcherMotor.set(-0.25);
+                while (true) {
+                    int nope = 0;
+                    if (launcherEncoder.get() >= distance || nope >= 20) {
+                        launcherMotor.set(0);
+                        Timer.delay(.25);
                         
                         break;
                     }
