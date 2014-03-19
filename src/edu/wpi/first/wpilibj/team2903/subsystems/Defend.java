@@ -1,5 +1,6 @@
 package edu.wpi.first.wpilibj.team2903.subsystems;
 
+import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.team2903.RobotMap;
@@ -9,8 +10,8 @@ import edu.wpi.first.wpilibj.team2903.RobotMap;
  */
 public class Defend extends Subsystem {
 
-    public Servo dStickVert = new Servo(RobotMap.dStickVert);
-    public Servo dStickHoriz = new Servo(RobotMap.dStickHoriz);
+    public Jaguar dStickVert = new Jaguar(RobotMap.dStickVert);
+    public Jaguar dStickHoriz = new Jaguar(RobotMap.dStickHoriz);
     public Servo lowGoal = new Servo(RobotMap.lowGoal);
     boolean leftTrackDeployed = false;
     boolean rightTrackDeployed = false;

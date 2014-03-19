@@ -53,7 +53,7 @@ public class Auto extends CommandBase {
             Defend.vertical(-1);
         }
         //comment out to here if kinect is a nub
-        //geoff's code VVV
+        //kkkkkkkkkkgeoff's code VVV
         //drive.tank(OI.rightArm.getY(), OI.leftArm.getY());
     }
 
