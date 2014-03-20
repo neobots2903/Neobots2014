@@ -81,30 +81,20 @@ public class Teleop extends CommandBase {
 
         //2nd controller for defence
         //Defend.horizontal(OI.defendiJoystick.getX());
-        if (OI.defendiJoystick.getRawButton(6))
-        {
-        Defend.vertical(-1);
+        if (OI.defendiJoystick.getRawButton(6)) {
+            Defend.vertical(-1);
+        } else if (OI.defendiJoystick.getRawButton(7)) {
+            Defend.vertical(1);
+        } else {
+            Defend.vertical(0);
         }
-        else if (OI.defendiJoystick.getRawButton(7))
-        {
-        Defend.vertical(1);
-        }
-        else
-        {
-        Defend.vertical(0);
-        }
-        
-        if (OI.defendiJoystick.getRawButton(8))
-        {
-        Defend.horizontal(-1);
-        }
-        else if (OI.defendiJoystick.getRawButton(9))
-        {
-        Defend.horizontal(1);
-        }
-        else
-        {
-        Defend.horizontal(0);
+
+        if (OI.defendiJoystick.getRawButton(8)) {
+            Defend.horizontal(-1);
+        } else if (OI.defendiJoystick.getRawButton(9)) {
+            Defend.horizontal(1);
+        } else {
+            Defend.horizontal(0);
         }
         Ball.capture(OI.defendiJoystick.getRawButton(3), OI.defendiJoystick.getRawButton(2));
         

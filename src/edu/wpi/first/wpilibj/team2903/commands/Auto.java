@@ -25,33 +25,40 @@ public class Auto extends CommandBase {
         //drive.forward(500, 0.75);//time and speed it will go forward
         // if kinect is bad comment out from here to }
         
-        if (OI.leftArm.getY() < 0.0 && OI.leftArm.getY() > -0.75) {
+        Defend.vertical(-1);//brings up defendi stick
+
+        //Goally Defend cod e
+        if (OI.leftArm.getY() < 0.0 && OI.leftArm.getY() > -0.75) { //Left: 0 -- -0.75
             drive.tank(-0.5, -0.5);  
             //Defend.horizontal(1);
-            Defend.vertical(-1);
         }
-        else if (OI.leftArm.getY() < 0.75 && OI.leftArm.getY() > 0) {
+        else if (OI.leftArm.getY() < 0.75 && OI.leftArm.getY() > 0) {//Left: 0.75 -- 0
             drive.tank(-1, -1);  
             //Defend.horizontal(1);
-            Defend.vertical(-1);
         }
       
-        else if (OI.rightArm.getY() < 0.0 && OI.rightArm.getY() > -0.75){
+        else if (OI.rightArm.getY() < 0.0 && OI.rightArm.getY() > -0.75){//Right: 0 -- -0.75
             drive.tank(0.5, 0.5);           
             //Defend.horizontal(-1);
-            Defend.vertical(-1);
         }
-        else if (OI.rightArm.getY() < 0.75 && OI.rightArm.getY() > 0){
+        else if (OI.rightArm.getY() < 0.75 && OI.rightArm.getY() >  0){//Right: 0.75 -- 0
             drive.tank(1, 1);           
             //Defend.horizontal(-1);
-            Defend.vertical(-1);
-        }
-        
-        else{
+        }else{
             drive.tank(0, 0);           
             //Defend.horizontal(0);
-            Defend.vertical(-1);
         }
+        
+        //Defendi stick code
+        if(OI.rightArm.getRawButton(3)){//right leg
+            Defend.horizontal(1);
+        }else if(OI.leftArm.getRawButton(4)){//left leg
+            Defend.horizontal(-1);
+        }else{
+            Defend.horizontal(0);
+        }
+        
+        
         //comment out to here if kinect is a nub
         //kkkkkkkkkkgeoff's code VVV
         //drive.tank(OI.rightArm.getY(), OI.leftArm.getY());
