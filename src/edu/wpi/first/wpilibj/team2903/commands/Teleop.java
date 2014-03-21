@@ -60,7 +60,7 @@ public class Teleop extends CommandBase {
 //            Thread shoot = new Thread(new Runnable() {
 //                public void run() {
             drive.drive(0, 0, 0, 0);
-                    Ball.Shoot();
+                    Ball.Shoot(Ball.Normal);
                     Timer.delay(.01);
 //                }
 //            });
@@ -71,7 +71,7 @@ public class Teleop extends CommandBase {
 //            Thread shoot = new Thread(new Runnable() {
 //                public void run() {
             drive.drive(0, 0, 0, 0);
-                    Ball.SoftShoot();
+                    Ball.Shoot(Ball.Slow);
                     Timer.delay(.01);
 //                }
 //            });
